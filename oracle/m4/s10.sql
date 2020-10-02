@@ -13,7 +13,7 @@ alter table items add constraint items_status_ck check(status in ('A', 'B', 'X')
 
 -- this insert violates the check constraint
 insert into items values(13, 'Y', 'ciao', 13);
-
+insert (item_id, name, code_id) into items  values(12, 'ciao', 13);
 -- this one is OK
 insert into items (item_id, status) values(43, 'X');
 

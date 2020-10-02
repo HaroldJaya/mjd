@@ -2,6 +2,8 @@
 
 alter session set current_schema = me;
 
+alter table execs modify exec_id number(6) primary key;
+
 create table details (
     detail_id integer,
     status char default 'A',
@@ -16,6 +18,7 @@ create table details (
 --    constraint details_execs_fk foreign key(exec_id) references execs(exec_id) on delete set null,
     constraint details_name_status_uq unique(name, status)
 );
+
 
 -- drop table details;
 
